@@ -1,13 +1,14 @@
 class Solution:
-    def reverseNumber(self, n):
-        rev = 0
-        while n > 0:
-            last = n % 10
-            rev = rev * 10 + last
-            n //= 10
-        return rev
+    def isArmstrong(self, n):
+        sum = 0
+        temp = n
+        while temp > 0:
+            last = temp % 10
+            sum += last ** 3
+            temp //= 10
+        return sum == n
 
 # Example usage:    
 n = 153
 obj = Solution()
-print(obj.reverseNumber(n))
+print(obj.isArmstrong(n))   
